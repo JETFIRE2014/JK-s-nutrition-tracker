@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#169b62">
+    <meta name="description" content="A fast cooked-food nutrition tracker for meal prep.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Jacob's Nutrition Tracker">
+    <title>Jacob's Nutrition Tracker</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <p class="eyebrow">Cooked weight tracker</p>
+        <h1>Jacob's Nutrition Tracker</h1>
+      </header>
+
+      <section class="summary-grid" aria-label="Nutrition summary">
+        <article class="summary-card">
+          <div class="summary-label">&#128293; Calories</div>
+          <div class="summary-value" id="summary-calories">0 kcal</div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-label">&#128170; Protein</div>
+          <div class="summary-value" id="summary-protein">0 g</div>
+        </article>
+      </section>
+
+      <section class="input-panel" aria-labelledby="inputs-title">
+        <div class="section-heading">
+          <h2 id="inputs-title">Meal weights</h2>
+          <button class="reset-button" id="reset-button" type="button">Reset</button>
+        </div>
+
+        <div class="input-grid">
+          <label class="input-card" for="food-chickenBreast">
+            <span>Cooked Chicken Breast</span>
+            <span class="input-unit">g</span>
+            <input id="food-chickenBreast" name="chickenBreast" type="number" inputmode="decimal" min="0" step="1" value="0">
+          </label>
+          <label class="input-card" for="food-broccoli">
+            <span>Cooked Broccoli</span>
+            <span class="input-unit">g</span>
+            <input id="food-broccoli" name="broccoli" type="number" inputmode="decimal" min="0" step="1" value="0">
+          </label>
+          <label class="input-card" for="food-sweetPotato">
+            <span>Cooked Sweet Potato</span>
+            <span class="input-unit">g</span>
+            <input id="food-sweetPotato" name="sweetPotato" type="number" inputmode="decimal" min="0" step="1" value="0">
+          </label>
+          <label class="input-card" for="addon-oilSpray">
+            <span>Oil Spray</span>
+            <span class="input-unit">sprays</span>
+            <input id="addon-oilSpray" name="oilSpray" type="number" inputmode="numeric" min="0" step="1" value="0">
+          </label>
+          <label class="input-card" for="addon-salt">
+            <span>Salt</span>
+            <span class="input-unit">g</span>
+            <input id="addon-salt" name="salt" type="number" inputmode="decimal" min="0" step="0.1" value="0">
+          </label>
+        </div>
+      </section>
+
+      <section class="nutrition-panel" aria-labelledby="nutrition-title">
+        <h2 id="nutrition-title">Nutrition</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Nutrient</th><th scope="col">Total</th></tr>
+            </thead>
+            <tbody id="nutrition-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="foods.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
